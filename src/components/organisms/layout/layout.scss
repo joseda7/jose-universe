@@ -1,0 +1,26 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+main {
+   .p-home {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      .welcome {
+         position: absolute;
+         top: 102px;
+         left: calc(32px + 65px);
+         z-index: 1;
+      }
+   }
+}
+
+@include from($large) {
+	main {
+		.p-home {
+			.welcome {
+				left: 32px;
+			}
+		}
+	}
+}

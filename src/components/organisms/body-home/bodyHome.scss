@@ -1,0 +1,17 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.o-home {
+   display: flex;
+   align-items: center;
+   width: 100vw;
+   height: 100vh;
+   background: $carbon;
+   justify-content: center;
+   &__logo {
+      width: 70px;
+      img {
+         width: 100%;
+      }
+   }
+}

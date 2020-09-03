@@ -1,0 +1,76 @@
+@import '../../../styles/variables.scss';
+
+.input-field{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .input-title{
+        font-family: $heebo-medium;
+        font-size: 17px;
+        margin-bottom: 3px;
+        color: $dove-gray;
+    }
+    .input{
+        background-color: $white;
+        border-radius: 4px;
+        padding: 12px 15px;
+        -webkit-appearance: none;
+        border-style: none;
+        color: #707070;
+        max-width: 750px;
+        font-family: $heebo-regular;
+        font-size: 16px;
+        label,
+        &::placeholder{
+            font-family: $heebo-regular;
+            font-size: 16px;
+            color: $dove-gray;
+        }
+    
+        &-select{
+            position: relative;
+            cursor: pointer;
+            &::after{
+                content: '';
+                position: absolute;
+                background: url('./../../../assets/images/icons/chevron-down.svg') no-repeat;
+                background-position: -6px -7px;
+                width: 14px;
+                height: 14px;
+                top: calc(50% - 7px);
+                right: 6px;
+            }
+            &.active{
+                &::after{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    
+        ul{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: $white;
+            border-radius: 4px;
+            user-select: none;
+            .item-option{
+                padding: 12px 15px;
+    
+                &:hover{
+                    background-color: $coconut;
+                }
+    
+                &:first-child{
+                    border-radius: 4px 4px 0 0;
+                }
+                
+                &:last-child{
+                    border-radius: 0 0 4px 4px;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,16 @@
+// @import "./Variables.scss";
+
+.text-h1 {
+    font-size: size(30);
+    font-family: $heebo-bold;
+}
+
+.text-h2 {
+    font-size: size(24);
+    font-family: $heebo-bold;
+}
+
+.text-p {
+    font-size: size(17);
+    font-family: $heebo-regular;
+}

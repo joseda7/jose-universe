@@ -1,0 +1,108 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.a-nav-accord {
+	width: 55%;
+	
+	@include from($large) {
+		width: 100%;
+	}
+
+	&__btn {
+		position: relative;
+		width: max-content;
+		max-width: fit-content;
+		text-align: left;
+		background: transparent;
+		font-size: size(38);
+		font-family: $roboto-bold;
+		color: var(--color-dark-white);
+		margin-bottom: size(30);
+		padding-right: 60px;
+		&-icon {
+			position: absolute;
+			height: 100%;
+			width: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			top: 0;
+			right: 10px;
+			&:after {
+				content: "";
+				position: absolute;
+				width: 15px;
+				height: 2px;
+				background: $magenta;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				height: 15px;
+				width: 2px;
+				background: $magenta;
+				transition: height 0.4s ease;
+			}
+		}
+		&--active {
+			color: $magenta;
+			.a-nav-accord__btn-icon:before { height: 0; } 
+		}
+		&--locked {
+			color: $faded-gray;
+			.a-nav-accord__btn-icon:after,.a-nav-accord__btn-icon:before { background: $faded-gray; } 
+		}
+		@include from($large) {
+			margin: size(20) 0;
+			padding: 0 60px 0 20px;
+		}
+		@include from($small) {
+			font-size: size(35);
+		}
+	}
+
+	&__sub {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 45%;
+		font-size: size(18);
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		background: var(--color-white-dark);;
+		padding-left: 20px;
+		li {
+			margin-bottom: size(30);
+			font-family: $roboto-regular;
+			color: var(--color-dark-white);
+			a {
+				font-family: $roboto-bold;
+				color: var(--color-dark-white);
+			}
+		}
+		li:first-child {
+			padding-top: 20px;
+			color: $faded-gray;
+		}
+		&--active{
+			opacity: 1;
+			height: auto;
+			transition: opacity 0.6s ease;
+		}
+		@include from($large) {
+			border-top: 1px solid $silver;
+			border-bottom: 1px solid $silver;
+			position: relative;
+			width: 100%;
+			padding-left: 0px;
+			li {
+				margin-top: size(30);
+				padding: 0 20px 0 40px;
+			}
+			li:first-child {
+				display: none;
+			}
+		}
+	}
+}

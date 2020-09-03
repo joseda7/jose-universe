@@ -1,0 +1,46 @@
+@import "../../../styles/variables.scss";
+@import '../../../styles/mixins.scss';
+
+.o-nav {
+	&__bar {
+		position: fixed;
+		z-index: $z-up;
+		top: 0; 
+		right: 0;
+		width: 65px; 
+		height: 100vh;
+		background: $onyx;
+		box-shadow: $shadow-primary;
+		display: flex;
+		justify-content: center;
+		
+		&-links {
+			list-style: none;
+			padding: 0;
+         position: absolute;
+         bottom: 0;
+         margin: 0 0 20px;
+			li {
+				display: block;
+				margin: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				a {
+					width: 30px;
+					height: 30px;
+					background: $faded-gray;
+					border-radius: 60px;
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+		@include from($large) {
+			background: transparent;
+			box-shadow: none;
+			height: auto;
+		}
+	}
+	
+}

@@ -1,0 +1,12 @@
+/* Fonts */
+@include fontface('Heebo-ExtraBold', 'Heebo-ExtraBold');
+@include fontface('Heebo-Bold', 'Heebo-Bold', bold);
+@include fontface('Heebo-Medium', 'Heebo-Medium', 500);
+@include fontface('Heebo-Regular', 'Heebo-Regular', normal);
+@include fontface('Heebo-Light', 'Heebo-Light', 300);
+@include fontface('Westhouse', 'Westhouse', normal);
+
+@include fontface('Roboto-Bold', 'Roboto-Bold', normal);
+@include fontface('Roboto-Medium', 'Roboto-Medium', normal);
+@include fontface('Roboto-Regular', 'Roboto-Regular', normal);
+

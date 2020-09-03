@@ -1,0 +1,70 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.m-header {
+   height: 70px;
+   //background: $magenta;
+   position: fixed;
+   top: 0;
+   left: 65px;
+   width: calc( 100% - 65px);
+   z-index: $z-top;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   padding-left: 32.83px;
+   padding-right: 15px;
+   @include from($large) {
+      padding-left: 15px;
+      padding-left: 0;
+      .hide-mobile {
+         display: none;
+      }
+   }
+   .hide-desktop {
+      display: none;
+      @include from($large) {
+         display: initial;
+      }
+   }
+   .icon {
+      color: $white;
+      font-size: 20px;
+      margin-right: 45px;
+      cursor: pointer;
+      @include from($large) {
+         text-align: center;
+         margin-right: 10px;
+         margin-left: 17px;
+         border-radius: 50%;
+         background-color: $magenta;
+         border: 10px solid $magenta;
+      }
+   }
+   .login {
+      font-family: $roboto-medium;
+      size: size(16);
+      cursor: pointer;
+      margin-right: 15px;
+   }
+   a {
+      color: $white;
+      font-family: $heebo-extrabold;
+   }
+   span {
+      color: $white;
+      font-family: $heebo-bold;
+   }
+   &-open {
+      @include from($large) {
+         background: var(--color-coconut-black);
+      }
+      .icon {
+         color: var(--color-dark-white);
+      }
+      .login {
+         color: var(--color-dark-white);
+      }
+   }
+}

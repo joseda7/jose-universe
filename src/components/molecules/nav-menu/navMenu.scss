@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.m-nav-menu {
+	position: fixed;
+	transition: transform .8s cubic-bezier(.71,0,.14,1.02), opacity 0.3s ease;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background: transparent;
+	padding: 90px 40px 40px 100px;
+	box-sizing: border-box;
+	background: $onyx;
+	z-index: $z-medium;
+	display: flex;
+	flex-direction: row;
+
+	@include from($large) {
+		flex-direction: column;
+		padding: 80px 0px 30px 0px;
+	}
+
+	&--hide{
+		transform: translateX(150vw);
+      opacity: 0;
+	}
+	
+}

@@ -1,0 +1,79 @@
+{
+   "name": "biodiverzo-portal-archetype",
+   "private": true,
+   "description": "Biodiverzo portal home",
+   "version": "0.1.0",
+   "author": "Jose Alcaraz",
+   "eslintConfig": {
+      "env": {
+         "browser": true,
+         "node": true
+      }
+   },
+   "dependencies": {
+      "dotenv": "^8.2.0",
+      "gatsby": "^2.21.37",
+      "gatsby-image": "^2.4.4",
+      "gatsby-plugin-canonical-urls": "^2.1.19",
+      "gatsby-plugin-env-variables": "^1.0.1",
+      "gatsby-plugin-google-marketing-platform": "^0.1.20",
+      "gatsby-plugin-manifest": "^2.4.5",
+      "gatsby-plugin-offline": "^3.2.3",
+      "gatsby-plugin-react-helmet": "^3.3.1",
+      "gatsby-plugin-sass": "^2.3.1",
+      "gatsby-plugin-sharp": "^2.6.4",
+      "gatsby-plugin-tslint": "0.0.2",
+      "gatsby-plugin-typescript": "^2.4.2",
+      "gatsby-source-contentful": "^2.3.6",
+      "gatsby-source-filesystem": "^2.3.4",
+      "gatsby-transformer-sharp": "^2.5.2",
+      "node-sass": "^4.14.1",
+      "prop-types": "^15.7.2",
+      "react": "^16.12.0",
+      "react-dom": "^16.12.0",
+      "react-helmet": "^6.0.0",
+      "react-slick": "^0.26.1",
+      "slick-carousel": "^1.8.1"
+   },
+   "devDependencies": {
+      "@types/react": "^16.9.35",
+      "@types/react-dom": "^16.9.8",
+      "babel-jest": "^26.0.1",
+      "babel-preset-gatsby": "^0.2.36",
+      "eslint": "^7.0.0",
+      "eslint-loader": "^4.0.2",
+      "gatsby-plugin-eslint": "^2.0.8",
+      "identity-obj-proxy": "^3.0.0",
+      "jest": "^26.0.1",
+      "prettier": "2.0.5",
+      "react-test-renderer": "^16.13.1",
+      "ts-node": "^8.10.1",
+      "tslint": "^6.1.2",
+      "tslint-config-prettier": "^1.18.0",
+      "tslint-loader": "^3.5.4",
+      "tslint-plugin-prettier": "^2.3.0",
+      "tslint-react": "^5.0.0",
+      "typescript": "^3.9.2"
+   },
+   "keywords": [
+      "gatsby"
+   ],
+   "license": "MIT",
+   "scripts": {
+      "build": "gatsby build",
+      "develop": "gatsby develop",
+      "format": "prettier --write src/**/*.{js,jsx}",
+      "start": "npm run develop",
+      "serve": "gatsby serve",
+      "test": "jest",
+      "type-check": "tsc --noEmit",
+      "lint": "tslint --project ."
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/joseda7/biodiverzo"
+   },
+   "bugs": {
+      "url": "https://github.com/joseda7/biodiverzo"
+   }
+}

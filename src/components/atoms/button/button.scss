@@ -1,0 +1,32 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixins.scss';
+
+input[type="button"]{
+    font-size: 15px;
+    font-family: $heebo-medium;
+    min-width: 200px;
+    padding: 12px 18px;
+    border-radius: 12px 0px;
+    -webkit-appearance: none;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    transition: all 0.1s ease-in;
+}
+.primary{
+    color: $white;
+    background-color: $magenta;
+    &:hover{
+        background-color: $medium-purple;
+    }
+}
+
+.secondary{
+    color: $magenta;
+    background-color: transparent;
+    border: 2px solid $magenta;
+    transition: all 0.1s ease-in;
+    &:hover{
+        border: 2px solid $medium-purple;
+        color: $medium-purple;
+    }
+}
