@@ -1,6 +1,6 @@
 module.exports = {
-  title: `Biodiverzo`,
-  description: `Biodiverzo site page`,
-  author: `Biodiverzo`,
-  siteUrl: `https://www.biodiverzo.com/`,
+  title: `JoseUniverse`,
+  description: `JoseUniverse site page`,
+  author: `Jose Alcaraz`,
+  siteUrl: `https://www.biodiverzo.com/jose-alcaraz`,
 };

@@ -1,8 +1,8 @@
 module.exports = {
    resolve: `gatsby-plugin-manifest`,
    options: {
-      name: `Biodiverzo`,
-      short_name: `Biodiverzo`,
+      name: `Jose Universe`,
+      short_name: `JoseUniverse`,
       start_url: `/`,
       background_color: `#141414`,
       theme_color: `#141414`,

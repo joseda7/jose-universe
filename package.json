@@ -1,7 +1,7 @@
 {
-   "name": "biodiverzo-portal-archetype",
+   "name": "jose-universe-archetype",
    "private": true,
-   "description": "Biodiverzo portal home",
+   "description": "Jose Universe portal home",
    "version": "0.1.0",
    "author": "Jose Alcaraz",
    "eslintConfig": {
@@ -71,9 +71,9 @@
    },
    "repository": {
       "type": "git",
-      "url": "https://github.com/joseda7/biodiverzo"
+      "url": "https://github.com/joseda7/jose-universe.git"
    },
    "bugs": {
-      "url": "https://github.com/joseda7/biodiverzo"
+      "url": "https://github.com/joseda7/jose-universe.git"
    }
 }

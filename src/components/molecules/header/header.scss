@@ -3,18 +3,19 @@
 
 .m-header {
    height: 70px;
-   //background: $magenta;
+   background: $white;
    position: fixed;
    top: 0;
-   left: 65px;
+   right: 65px;
    width: calc( 100% - 65px);
-   z-index: $z-top;
+   z-index: $z-floor;
    display: flex;
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
    padding-left: 32.83px;
    padding-right: 15px;
+   border-bottom: 1px solid $coconut;
    @include from($large) {
       padding-left: 15px;
       padding-left: 0;

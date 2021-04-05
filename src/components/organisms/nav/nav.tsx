@@ -36,15 +36,13 @@ const Nav = ( {isMenuActive, setMenuActive}: NavInterface) => {
 		{name: "4", icon:"", href: "/"},
    ]
    
-	const freezePage = () => {
-		document.body.classList.add("freeze-page")
-	}
 	const openMenu = () => {
-		freezePage()
+		document.body.classList.add("freeze-page")
 		setMenuActive(true)
-	}
+   }
+   
 	const closeMenu = () => {
-		freezePage()
+		document.body.classList.remove("freeze-page")
 		setMenuActive(false)
 	}
 
@@ -67,7 +65,8 @@ const Nav = ( {isMenuActive, setMenuActive}: NavInterface) => {
 			</section>
 
 			<NavMenu
-				isMenuActive={ isMenuActive }
+            isMenuActive={ isMenuActive }
+            closeMenu={ closeMenu }
 			/>
 			
 		</div>

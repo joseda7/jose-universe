@@ -8,7 +8,7 @@
 import React, { useState } from "react"
 import "./layout.scss";
 import Nav from "../nav/nav"
-// import Header from '../../molecules/header/header';
+import Header from '../../molecules/header/header';
 // import useChangeTheme from "../../../hooks/useChangeTheme";
 
 interface LayoutInterface {
@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutInterface) => {
 
    return (
       <>
-         {/* <Header isMenuActive={isMenuActive} isDark={isDark} actionTheme={changeDarkMode}/>*/}
+         <Header isMenuActive={isMenuActive} />
          <Nav isMenuActive={isMenuActive} setMenuActive={setMenuActive} /> 
          <div>
             <main>{children}</main>

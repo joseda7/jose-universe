@@ -1,16 +1,22 @@
 // @import "./Variables.scss";
 
-.text-h1 {
-    font-size: size(30);
-    font-family: $heebo-bold;
+.title-primary {
+   font-size: size(50);
+   font-family: $heebo-bold;
 }
 
-.text-h2 {
-    font-size: size(24);
-    font-family: $heebo-bold;
+.title-secondary {
+   font-size: size(40);
+   font-family: $heebo-bold;
+   margin-bottom: 20px;
+   span {
+      font-size: size(20);
+   }
 }
 
-.text-p {
-    font-size: size(17);
-    font-family: $heebo-regular;
+.title-tertiary {
+   font-size: size(22);
+   font-family: $heebo-bold;
 }
+
+

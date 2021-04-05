@@ -9,7 +9,7 @@
 	top: 0;
 	left: 0;
 	background: transparent;
-	padding: 90px 40px 40px 100px;
+	padding: 70px 150px 70px 100px;
 	box-sizing: border-box;
 	background: $onyx;
 	z-index: $z-medium;
@@ -24,6 +24,39 @@
 	&--hide{
 		transform: translateX(150vw);
       opacity: 0;
-	}
+   }
+
+   &__cont {
+      display: flex;
+   }
+   
+   &__image {
+      width: 60%;
+      img {
+         height: 100%;
+         display: block;
+         margin: 0 auto;
+         opacity: 0.15;
+      }
+   }
+
+   &__list {
+      width: 40%;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      button {
+         color: white;
+         font-size: size(50);
+         background:transparent; 
+         span {
+            font-size: size(30);
+         }
+         &:hover {
+            opacity: 0.5;
+         }
+      }
+   }
 	
 }

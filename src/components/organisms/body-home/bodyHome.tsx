@@ -1,5 +1,8 @@
 import React from 'react';
-// import Carousel from '../carousel/carousel';
+import AboutBody from './../../molecules/about-body/aboutBody';
+import WorkBody from './../../molecules/work-body/workBody'; 
+import SharedBody from './../../molecules/shared-body/sharedBody';
+import ContactBody from './../../molecules/contact-body/contactBody'; 
 import './bodyHome.scss';
 
 interface IBodyHome {
@@ -13,12 +16,38 @@ const BodyHome = (props:IBodyHome) => {
    } = props
    
    return (
-      <section className="o-home">
-         <img  className="o-home__logo"
-               src={ logotype.file.url } 
-               alt={ logotype.file.url }
-         />
-      </section>
+      <div className="o-home">
+      
+         <section id="section1" className="o-home__section">
+            <AboutBody 
+               idNum = {"01"}
+               title = {"About"}
+               img = {logotype}
+            />
+         </section>
+
+         <section id="section2" className="o-home__section">
+            <WorkBody
+               idNum = {"02"} 
+               title = {"Work"}
+            />
+         </section>
+
+         <section id="section3" className="o-home__section">
+            <SharedBody
+               idNum = {"03"} 
+               title = {"Shared"}
+            />
+         </section>
+
+         <section id="section4" className="o-home__section">
+            <ContactBody
+               idNum = {"04"} 
+               title = {"Contact"}
+            />
+         </section>
+
+      </div>
    )
 };
 

@@ -2,16 +2,29 @@
 @import "../../../styles/mixins.scss";
 
 .o-home {
-   display: flex;
-   align-items: center;
-   width: 100vw;
-   height: 100vh;
-   background: $carbon;
-   justify-content: center;
-   &__logo {
-      width: 70px;
-      img {
-         width: 100%;
+   &__section {
+      width: 100%;
+      padding: 90px 150px;
+      @include from($large) {
+         padding: 50px 20px;;
       }
    }
+}
+
+#section1 {
+   height: 100vh;
+   padding-top: 150px ;
+   background-color: $white;
+}
+
+#section2 {
+   background-color: $coconut;
+}
+
+#section3 {
+   background-color: $white;
+}
+
+#section4 {
+   background-color: $onyx;
 }
