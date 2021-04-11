@@ -20,7 +20,7 @@ const ContactBody = (props:IContactBody) => {
             {title} 
          </h2>
          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatum sed praesentium cum eius numquam est ea similique neque aliquid quam quasi saepe reprehenderit, placeat expedita molestias assumenda! Consectetur, nostrum.
+            LLorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatum sed praesentium cum eius numquam est ea similique neque aliquid quam quasi saepe reprehenderit, placeat expedita molestias assumenda! Consectetur, nostrum.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatum sed praesentium cum eius numquam est ea similique neque aliquid quam quasi saepe reprehenderit, placeat expedita molestias assumenda! Consectetur, nostrum.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatum sed praesentium cum eius numquam est ea similique neque aliquid quam quasi saepe reprehenderit, placeat expedita molestias assumenda! Consectetur, nostrum.
          </p>
