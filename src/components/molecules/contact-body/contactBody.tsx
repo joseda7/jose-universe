@@ -18,12 +18,12 @@ const ContactBody = (props:IContactBody) => {
          <h2 className="title-secondary"> 
             <span> {idNum} </span>
             {title} 
+         <span> | Let's transform reality together </span>
          </h2>
          <p>
-            LLorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatum sed praesentium cum eius numquam est ea similique neque aliquid quam quasi saepe reprehenderit, placeat expedita molestias assumenda! Consectetur, nostrum.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatum sed praesentium cum eius numquam est ea similique neque aliquid quam quasi saepe reprehenderit, placeat expedita molestias assumenda! Consectetur, nostrum.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, voluptatum sed praesentium cum eius numquam est ea similique neque aliquid quam quasi saepe reprehenderit, placeat expedita molestias assumenda! Consectetur, nostrum.
+            jose.david.alcaraz@gmail.com
          </p>
+         <span class="dot"></span>
       </div>
    )
 }
