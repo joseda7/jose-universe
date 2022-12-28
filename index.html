@@ -11,22 +11,17 @@
 </head>
 <body>
     <main>
+
         <header id="header">
             <a class="header_logo" href="">
-                <img src="assets/jose-alcaraz-logo.svg" alt="Jose Alcaraz Logotype">
+                <img src="assets/jose-alcaraz-logo.svg" alt="Jose Alcaraz logotype">
             </a>
             <div class="header_cont">
                 <nav class="header_nav">
                     <ul>
-                        <li>
-                            <a class="text" href="#section-dev"> Frontend Dev </a> 
-                        </li>
-                        <li>
-                            <a class="text" href="#section-illustration"> Illustration & Animation </a> 
-                        </li>
-                        <li>  
-                            <a class="text" href="#section-music"> Music </a>
-                        </li>
+                        <li> <a class="text" href="#section-dev"> Frontend Dev </a> </li>
+                        <li> <a class="text" href="#section-illustration"> Illustration & Animation </a> </li>
+                        <li> <a class="text" href="#section-music"> Music </a> </li>
                     </ul>
                 </nav>  
                 <button id="btn-change-mode">
@@ -38,7 +33,7 @@
         <section id="section-home" class="sectionHome --animate-fadein">
             <div class="home_cont">
                 <div class="home_img">
-                    <img src="assets/jose-home.png" alt="Jose Alcaraz Home Image">
+                    <img src="assets/jose-home.png" alt="Jose Alcaraz Home image">
                 </div>
                 <div class="home_info">
                     <h1 class="text text_title">
@@ -46,41 +41,73 @@
                     </h1>
                     <div class="separator"></div>
                     <p class="text text_code">
-                        An electronic engineer with some experience in frontend dev that would love to help people around the world through software, illustration and music. Welcome to this part of my universe
+                        An electronic engineer with some experience as frontend dev that would love to help people around the world through technology, science and arts. Welcome to this part of my universe
                         <span>_</span>   
                     </p>
                 </div>
             </div>
-            <div class="scroll-down --animate-fadein-2"></div>
+            <div class="scrollDown --animate-fadein-2"></div>
+            <a class="btnContact" href="#section-contact"> Let's talk! </a>
         </section>
 
         <section id="section-dev">
-            <h2 class="text text_title">
+            <h2 class="text text_h2">
                 Frontend Dev
             </h2>
             <ul class="portfolio-list">
-                <li>
-                    <p> Web Games </p>
-                    <span> JavaScript </span> <span> Canvas </span> <span> PhaserJS </span>
+                <li id="portfolio-item-1" class="portfolioItem">
+                    <div class="portfolio-list_head">
+                        <p class="text text_title"> Web Games </p>
+                        <div>
+                            <span> JavaScript </span> <span> Canvas </span> <span> PhaserJS </span>
+                        </div>
+                    </div>
+                    <div class="portfolio-list_body">
+                        <img src="assets/web-games.png" alt="Web games image">
+                        <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
+                    </div>
                 </li>
-                <li>
-                    <p> Websites </p>
-                    <span> JavaScript </span> <span> Canvas </span> <span> PhaserJS </span>
+                <li id="portfolio-item-2" class="portfolioItem">
+                    <div class="portfolio-list_head">
+                        <p class="text text_title"> Websites </p>
+                        <div>
+                            <span> ReactJS </span> <span> Angular </span> <span> SVG </span> <span> Sass </span>
+                        </div>
+                    </div>
+                    <div class="portfolio-list_body">
+                        <img src="assets/web-games.png" alt="Web games image">
+                        <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
+                    </div>
+                </li>
+                <li id="portfolio-item-3" class="portfolioItem">
+                    <div class="portfolio-list_head">
+                        <p class="text text_title"> Others </p>
+                        <div>
+                            <span> - </span> 
+                        </div>
+                    </div>
+                    <div class="portfolio-list_body">
+                        <img src="assets/web-games.png" alt="Web games image">
+                        <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
+                    </div>
                 </li>
             </ul>
         </section>
+
         <section id="section-illustration">
-            <h2 class="text text_title">
+            <h2 class="text text_h2">
                 Illustration & Animation
             </h2>
         </section>
+        
         <section id="section-music">
-            <h2 class="text text_title">
+            <h2 class="text text_h2">
                 Music
             </h2>
         </section>
+        
         <section id="section-contact">
-            <h2 class="text text_title">
+            <h2 class="text text_h2">
                 Contact
             </h2>
         </section>
@@ -88,7 +115,7 @@
         <footer>
             <div class="separator"></div>
             <div class="footer_cont">
-                <p class="text text_small"> Jose Alcaraz's Portfolio v2.0 </p>
+                <p class="text text_small"> Jose Alcaraz's Portfolio v2.0. Copyright 2022. </p>
             </div>
         </footer>
     </main>
