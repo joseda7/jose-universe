@@ -1,26 +1,46 @@
+const CONSOLE_MSG = [
+    "I've had a great time creating and building cool projects with amazing people. Check out some of them",
+    "Both illustration animation have been there in my hearth for a while",
+    "If you think we can collaborate together feel free to send me a message. It will be a massive honor to hear from you"
+]
+
 function init() {    
     events();
 }
 
 function events() {
     var btnChangeMode = document.getElementById("btn-change-mode");
-    var currentIdNum = 0;
-    // var btnChangeMode
-
-    // document.addEventListener("scroll", (event) => {
-    //     sectionDots.classList.add("--animate-fadein");
-    // });
+    var btnContact = document.getElementById("btn-contact");
+    var consoleTxtElement1 = document.getElementById("console-text-1");
+    var consoleTxtElement2 = document.getElementById("console-text-2");
+    var consoleTxtElement3 = document.getElementById("console-text-3");
     
-    // portfolio_item--active
+    document.addEventListener("scroll", () => {
+        if (window.scrollY > 250) {
+            consoleTxtElement1.innerHTML = CONSOLE_MSG[0] + "<span>_</span>";
+            consoleTxtElement1.classList.add("--animate-typing");
+        }
+        if (window.scrollY > 700) {
+            consoleTxtElement2.innerHTML = CONSOLE_MSG[1] + "<span>_</span>";
+            consoleTxtElement2.classList.add("--animate-typing");{}
+        }
+        if (window.scrollY < 1200) {
+            btnContact.classList.remove("--hide");
+        } 
+        if (window.scrollY > 1200) {
+            consoleTxtElement3.innerHTML = CONSOLE_MSG[2] + "<span>_</span>";
+            consoleTxtElement3.classList.add("--animate-typing");
+            btnContact.classList.add("--hide");
+        } 
+    }, false);
 
     document.querySelectorAll('.portfolioItem').forEach(item => {
         item.addEventListener('click', event => {
-            currentIdNum = parseInt(event.target.id.replace( /^\D+/g, ''));
             event.target.classList.toggle("portfolio_item--active");
         })
     }, false);
     
-    btnChangeMode.addEventListener('click', event => {
+    btnChangeMode.addEventListener('click', () => {
         document.body.classList.toggle("--dark-mode");
     }, false);
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <title> Jose Alcaraz's Portfolio </title>
 </head>
 <body>
@@ -19,9 +20,8 @@
             <div class="header_cont">
                 <nav class="header_nav">
                     <ul>
-                        <li> <a class="text" href="#section-dev"> Frontend Dev </a> </li>
-                        <li> <a class="text" href="#section-illustration"> Illustration & Animation </a> </li>
-                        <li> <a class="text" href="#section-music"> Music </a> </li>
+                        <li> <a class="text" href="#frontend"> Frontend Dev </a> </li>
+                        <li> <a class="text" href="#illustration"> Illustration & Animation </a> </li>
                     </ul>
                 </nav>  
                 <button id="btn-change-mode">
@@ -30,48 +30,50 @@
             </div>
         </header>
 
-        <section id="section-home" class="sectionHome --animate-fadein">
+        <section id="about" class="sectionHome">
             <div class="home_cont">
-                <div class="home_img">
+                <div class="home_img --animate-fadein">
                     <img src="assets/jose-home.png" alt="Jose Alcaraz Home image">
                 </div>
-                <div class="home_info">
-                    <h1 class="text text_title">
+                <div id="console" class="home_info --animate-fadein-2">
+                    <h1 class="text text_h1">
                         Hi. I'm Jose Alcaraz
                     </h1>
                     <div class="separator"></div>
-                    <p class="text text_code">
-                        An electronic engineer with some experience as frontend dev that would love to help people around the world through technology, science and arts. Welcome to this part of my universe
-                        <span>_</span>   
+                    <p id="console-text" class="text text_code">
+                        An electronic engineer with some experience in frontend dev that would love to help people around the world through technology, science and arts. Welcome to this part of my universe<span>_</span>   
                     </p>
                 </div>
             </div>
-            <div class="scrollDown --animate-fadein-2"></div>
-            <a class="btnContact" href="#section-contact"> Let's talk! </a>
+            <div class="scrollDown"></div>
+            <a id="btn-contact" class="btnContact --animate-fadein-3" href="#contact"> Let's talk! </a>
         </section>
 
-        <section id="section-dev">
+        <section id="frontend">
+            <div class="console">
+                <p id="console-text-1"><span>_</span></p>
+            </div>
             <h2 class="text text_h2">
                 Frontend Dev
             </h2>
             <ul class="portfolio-list">
-                <li id="portfolio-item-1" class="portfolioItem">
+                <li class="portfolioItem">
                     <div class="portfolio-list_head">
-                        <p class="text text_title"> Web Games </p>
+                        <h3 class="text text_h3"> Web Games </h3>
                         <div>
                             <span> JavaScript </span> <span> Canvas </span> <span> PhaserJS </span>
                         </div>
                     </div>
                     <div class="portfolio-list_body">
                         <img src="assets/web-games.png" alt="Web games image">
-                        <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
+                        <p class="text"> Games introduced me to the frontend world and I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
                     </div>
                 </li>
-                <li id="portfolio-item-2" class="portfolioItem">
+                <li class="portfolioItem">
                     <div class="portfolio-list_head">
-                        <p class="text text_title"> Websites </p>
+                        <h3 class="text text_h3"> Websites </h3>
                         <div>
-                            <span> ReactJS </span> <span> Angular </span> <span> SVG </span> <span> Sass </span>
+                            <span> ReactJS </span> <span> Angular </span> <span> Gatsby </span>
                         </div>
                     </div>
                     <div class="portfolio-list_body">
@@ -79,11 +81,11 @@
                         <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
                     </div>
                 </li>
-                <li id="portfolio-item-3" class="portfolioItem">
+                <li class="portfolioItem">
                     <div class="portfolio-list_head">
-                        <p class="text text_title"> Others </p>
+                        <h3 class="text text_h3"> Others </h3>
                         <div>
-                            <span> - </span> 
+                            <span> Figma </span> <span> Adobe XD </span>
                         </div>
                     </div>
                     <div class="portfolio-list_body">
@@ -94,30 +96,90 @@
             </ul>
         </section>
 
-        <section id="section-illustration">
+        <section id="illustration">
+            <div class="console">
+                <p id="console-text-2"><span>_</span></p>
+            </div>
             <h2 class="text text_h2">
                 Illustration & Animation
             </h2>
+            <ul class="portfolio-list">
+                <li class="portfolioItem">
+                    <div class="portfolio-list_head">
+                        <h3 class="text text_h3"> Web Games </h3>
+                        <div>
+                            <span> JavaScript </span> <span> Canvas </span> <span> PhaserJS </span>
+                        </div>
+                    </div>
+                    <div class="portfolio-list_body">
+                        <img src="assets/web-games.png" alt="Web games image">
+                        <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
+                    </div>
+                </li>
+                <li class="portfolioItem">
+                    <div class="portfolio-list_head">
+                        <h3 class="text text_h3"> Websites </h3>
+                        <div>
+                            <span> ReactJS </span> <span> Angular </span> <span> SVG </span> <span> Sass </span>
+                        </div>
+                    </div>
+                    <div class="portfolio-list_body">
+                        <img src="assets/web-games.png" alt="Web games image">
+                        <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
+                    </div>
+                </li>
+                <li class="portfolioItem">
+                    <div class="portfolio-list_head">
+                        <h3 class="text text_h3"> Others </h3>
+                        <div>
+                            <span> Figma </span> <span> Adobe XD </span>
+                        </div>
+                    </div>
+                    <div class="portfolio-list_body">
+                        <img src="assets/web-games.png" alt="Web games image">
+                        <p class="text"> Games introduced me to the frontend world. I spent about 4 years being part of amazing web projects for important customers in Latin America using JS (and libraries) among different 2D-based game types such as following patterns, avoiding obstacles, drag and drop, snake, looking for objects on a big map and so on. </p>
+                    </div>
+                </li>
+            </ul>
         </section>
         
-        <section id="section-music">
-            <h2 class="text text_h2">
-                Music
-            </h2>
-        </section>
-        
-        <section id="section-contact">
-            <h2 class="text text_h2">
-                Contact
-            </h2>
-        </section>
-        
-        <footer>
-            <div class="separator"></div>
-            <div class="footer_cont">
-                <p class="text text_small"> Jose Alcaraz's Portfolio v2.0. Copyright 2022. </p>
+        <section id="contact" class="sectionContact">
+            <div class="console">
+                <p id="console-text-3"><span>_</span></p>
             </div>
-        </footer>
+            <a class="text text_h1 email" href="mailto:jose.david.alcaraz7@gmail.com?Subject=Lets%20Talk">jose.david.alcaraz7@gmail.com</a>
+            <ul class="social">
+                <li>
+                    <a href="">
+                        <img src="assets/social-instagram.png" alt="Jose's Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="assets/social-github.png" alt="Jose's GitHub">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="assets/social-linkedin.png" alt="Jose's GitHub">
+                    </a>
+                </li>
+            </ul>
+            <div class="footer_bkg">
+                <div class="planet1"></div>
+                <div class="planet2"></div>
+                <div class="planet3"></div>
+                <div class="planet4"></div>
+                <img src="assets/meet-jose.png" alt="Image Meet Jose">
+            </div>
+            <footer>
+                <div class="separator"></div>
+                <div class="footer_cont">
+                    <p class="text text_small"> Jose Alcaraz's Portfolio v2.0. Copyright 2022. </p>
+                </div>
+            </footer>
+        </section>
+        
     </main>
     <script src="main.js"></script>
 </body>

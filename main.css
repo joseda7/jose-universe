@@ -1,21 +1,26 @@
+/* VARIABLES ------------------------------ */
 :root {
     --onyx: rgb(51, 51, 51);
     --onyx-a0: rgba(51, 51, 51, 0);
+    --carbon: rgb(36, 36, 36);
     --white: rgb(255, 255, 255);
     --turquoise: rgb(5, 136, 158);
     --aquamarine: rgb(27, 226, 202);
-    --smoke: rgb(241, 241, 241);
+    --smoke: rgb(235, 235, 235);
     --gray: rgb(128, 128, 128);
+    --salmon: rgb(250, 119, 97);
+    --mustard: rgb(247, 209, 116);
 }
 .--dark-mode {
     --onyx: rgb(255, 255, 255);
     --onyx-a0: rgba(255, 255, 255, 0);
     --white: rgb(32 32 32);
     --smoke: rgb(50 53 54);
+    --carbon: rgb(235, 235, 235);
 }
-.--hide {
-    opacity: 0;
-}
+
+
+/* GENERAL ---------------------------------- */
 * {
     font-family: "Montserrat";
 }
@@ -32,6 +37,7 @@ body {
 main {
     display: block;
     overflow: hidden;
+    position: relative;
 }
 a {
     text-align: center;
@@ -44,24 +50,6 @@ a:hover {
     cursor: pointer;
 }
 
-/* FADE IN ANIMATION ---------------------------------- */
-@keyframes fadeInAnimation {
-    0% { opacity: 0 }
-    100% { opacity: 1 }
-}
-.--animate-fadein {
-    opacity: 0;
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-.--animate-fadein-2 {
-    opacity: 0;
-    animation: fadeInAnimation ease 7s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
-}
 
 /* HEADER --------------------------- */
 header {
@@ -84,6 +72,9 @@ header {
 }
 .header_logo img {
     height: 100%;
+}
+.header_logo:hover {
+    opacity: 0.8;
 }
 .header_cont {
     display: flex;
@@ -123,6 +114,7 @@ header {
     border: 1px solid var(--white);
 }
 
+
 /* HEADER NAV ------------------------------------ */
 .header_nav ul {
     list-style: none;
@@ -145,6 +137,7 @@ header {
     background-color: var(--gray);
 }
 .header_nav ul li:first-child:after { width: 0px }
+
 
 /* HOME ------------------------------------------- */
 .home_cont {
@@ -170,8 +163,8 @@ header {
 }
 .home_info h1{
     color: var(--white);
+    display: block;
 }
-
 .home_info:after {
     content: "";
     position: absolute;
@@ -184,6 +177,20 @@ header {
     top: 50%;
     margin-top: -7px;
 }
+.home_info--fixed {
+    position: fixed;
+    width: 100%;
+    max-width: 500px;
+    left: 50%;
+    margin-left: -200px;
+    bottom: 20px;
+    z-index: 100;
+    height: 96px;
+    border: 1px solid var(--carbon);
+}
+.home_info--fixed h1, .home_info--fixed:after{
+    display: none;
+}
 .btnContact {
     background: var(--turquoise);
     border: 2px solid var(--aquamarine);
@@ -194,11 +201,12 @@ header {
     font-weight: bold;
     font-size: 13px;
     position: fixed;
-    bottom: 80px;
+    bottom: 45px;
     right: 20px;
     z-index: 100;
     display: block;
     transition: scale 0.15s ease-in;
+    /* transition: opacity 0.5s ease-in; */
 }
 .btnContact:after {
     content: "";
@@ -220,25 +228,34 @@ header {
 /* SECTIONS --------------------------------------- */
 section {
     position: relative;
-    padding: 40px 20px;
+    padding: 70px 20px 50px;
     box-sizing: border-box;
+    overflow: hidden;
+}
+section:nth-child(odd) {
+    background-color: var(--smoke);
+}
+section:nth-child(odd) li.portfolioItem {
+    background-color: var(--white);
 }
 section.sectionHome {
-    height: 95vh;
+    height: 96vh;
     vertical-align: middle;
     display: table-cell;
     width: 100vw;
     z-index: 10;
 }
-section:nth-child(odd) {
-    background-color: var(--smoke);
+section.sectionContact {
+    background-color: var(--carbon);
+    height: 90vh;
+    vertical-align: middle;
+    display: table-cell;
+    width: 100vw;
 }
-#section-contact {
-    background-color: var(--onyx);
-}
-#section-contact .text {
+section.sectionContact .text {
     color: var(--white);
 }
+
 
 /* PORTFOLIO LIST ------------------------------- */
 .portfolio-list {
@@ -249,10 +266,9 @@ section:nth-child(odd) {
     margin: 0 auto;
 }
 .portfolio-list li {
-    background: var(--white);
+    background: var(--smoke);
     opacity: 0.8;
     margin: 20px 0;
-    padding: 5px 20px;
     border-radius: 3px;
     cursor: pointer;
     position: relative;
@@ -263,15 +279,13 @@ section:nth-child(odd) {
     content: "";
     position: absolute;
     right: 20px;
-    bottom: 28px;
+    bottom: 37px;
     width: 10px;
     height: 10px;
     border-bottom: 1px solid var(--turquoise);
     border-left: 1px solid var(--turquoise);
     transform: rotate(-45deg);
     margin-bottom: -5px;
-    transition: transform 0.5s ease-in;
-
 }
 .portfolio-list li:hover {
     opacity: 1;
@@ -300,21 +314,26 @@ section:nth-child(odd) {
     max-height: 0;
     transition: max-height 0.4s ease-in;
     pointer-events: none;
-    transform: translateY(6px);
+    transform: translateY(5px);
 }
 .portfolio-list_body img {
     width: 100%;
+    border-radius: 3px;
 }
-/* li.portfolio_item--active {
+li.portfolio_item--active {
     opacity: 1;
-} */
+}
 li.portfolio_item--active .portfolio-list_body {
-    /* opacity: 1; */
     max-height: 500px;
 }
 li.portfolio_item--active:after {
     transform: rotate(-225deg);
 }
+
+
+
+
+
 
 
 /* TEXT ------------------------------------------- */
@@ -330,22 +349,25 @@ li.portfolio_item--active:after {
 .text_code span {
     animation: blinker 1s step-end infinite;
 }
-@keyframes blinker { 50% {opacity: 0} }
-.text_title {
-    font-size: 17px;
+.text_h1 {
+    font-size: 20px;
     margin: 10px 0;
+    font-weight: bold;
 }
+.text_h2 {
+    position: relative;
+    font-size: 20px;
+    margin: 10px 0px 40px 40px;
+} 
+.text_h3 {
+    font-size: 17px;
+} 
 .text_small {
     font-size: 10px;
 }
 .text_x-small {
     font-size: 6px;
 }
-.text_h2 {
-    position: relative;
-    font-size: 17px;
-    margin: 10px 0px 40px 40px;
-} 
 .text_h2::after {
     content: "";
     position: absolute;
@@ -402,6 +424,7 @@ li.portfolio_item--active:after {
     letter-spacing: 2px;
 }
 
+
 /* SEPARATOR -------------------------------- */
 .separator {
     position: relative;
@@ -409,6 +432,7 @@ li.portfolio_item--active:after {
     width: 100%;
     border-bottom: 1px solid rgba(128, 128, 128, 0.4);
     margin: 10px auto;
+    mix-blend-mode: screen;
 }
 .separator::after {
     content: "";
@@ -430,8 +454,6 @@ li.portfolio_item--active:after {
     top: 0px;
     background-color: rgba(128, 128, 128, 1);
 }
-
-
 
 
 /* SCROLL -------------------- */
@@ -459,6 +481,7 @@ li.portfolio_item--active:after {
     background: var(--aquamarine);
 }
 
+
 /* SCROLL DOWN ---------------------------------- */
 .scrollDown {
     width: 10px;
@@ -468,11 +491,9 @@ li.portfolio_item--active:after {
     border-left: 1px solid var(--gray);
     margin: 0 auto;
     position: absolute;
-    left: 50%;
+    left: 25px;
     bottom: 35px;
-    margin-left: -5px;
 }
-
 
 
 /* FOOTER ------------------------------------- */
@@ -481,7 +502,9 @@ footer {
     padding: 20px 20px 10px 20px;
     width: 100%;
     box-sizing: border-box;
-    background-color: var(--onyx);
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .footer_cont {
     display: flex;
@@ -492,4 +515,173 @@ footer {
 .footer_cont .text {
     color: var(--white);
 }
+.footer_bkg {
+    position: absolute;
+    width: 50%;
+    height: 440px;
+    bottom: 0;
+    right: 0;
+    /* background: red; */
+}
+.footer_bkg img {
+    width: 64px;
+    position: absolute;
+    top: 10px;
+    left: 200px;
+}
+.planet1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: var(--turquoise);
+    bottom: -150px;
+    left: 0;
+    border-radius: 50% ;
+}
+.planet2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--turquoise);
+    top: 102px;
+    left: -40px;
+    border-radius: 50% ;
+}
+.planet3 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--aquamarine);
+    top: 40px;
+    left: 78px;
+    border-radius: 50% ;
+}
+.planet4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: var(--aquamarine);
+    top: 70px;
+    left: 450px;
+    border-radius: 50% ;
+}
 
+/* SOCIAL ------------------------------------- */
+.social {
+    display: flex;
+    padding: 0;
+    list-style: none;    
+    align-items: center;
+    transform: translateX(40px);
+}
+.social li {
+    margin: 0 20px 0 0;
+    background-color: var(--white);
+    width: 40px;
+    height: 40px;
+    transition: scale 0.15s ease-in;
+    border-radius: 3px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.social li:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+.social li a img {
+    width: 100%;
+    mix-blend-mode: exclusion;
+    filter: contrast(0.7);
+}
+.email {
+    margin: 20px 0;
+    display: block;
+    transform: translateX(40px);
+}
+.email:hover {
+    opacity: 0.8;
+}
+
+
+/* ANIMATIONS ---------------------------------- */
+@keyframes fadeInAnimation {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+.--animate-fadein {
+    opacity: 0;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation2 {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0px); }
+}
+.--animate-fadein-2 {
+    opacity: 0;
+    animation: fadeInAnimation2 ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+.--animate-fadein-3 {
+    opacity: 0;
+    animation: fadeInAnimation ease 1.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+@keyframes typing { 
+    from { width: 0px;  } 
+    to { width: 100%; } 
+}
+.--animate-typing {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(40, end);
+}
+@keyframes blinker { 50% {opacity: 0} }
+.--hide {
+    opacity: 0!important;
+}
+
+
+/* CONSOLE ----------------------- */
+.console {
+    position: absolute;
+    width: 97%;
+    background-color: var(--onyx);
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 6px 41px;
+    margin-bottom: 30px;
+    min-height: 25px;
+    top: 30px;
+    z-index: 1;
+}
+.console::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: var(--aquamarine);
+    top: 10px;
+    left: 19px;
+    border-radius: 50%;
+}
+.console p {
+    font-family: 'Inconsolata';
+    color: var(--white);
+    margin: 0;
+    font-size: 13px;
+    position: relative;
+}
+.console p span{
+    font-family: 'Inconsolata';
+    color: var(--white);
+    margin: 0;
+    font-size: 13px;
+    position: relative;
+    animation: blinker 1s step-end infinite;
+}
