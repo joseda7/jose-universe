@@ -592,7 +592,7 @@ footer {
 .footer_bkg img {
     width: 64px;
     position: absolute;
-    top: 10px;
+    top: 0px;
     left: 200px;
 }
 .planet1 {
