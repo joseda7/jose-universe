@@ -1,6 +1,7 @@
 const CONSOLE_MSG = [
     "I've had a great time creating and building cool projects with amazing people. Check out some of them",
     "Both illustration and animation have been around since I was a kid",
+    "I share to learn and then I learn to keep sharing. *The content here is in pure honest Spanish :)",
     "If you think we can collaborate together feel free to send me a message. It will be a massive honor to hear from you"
 ]
 
@@ -13,6 +14,7 @@ function events() {
     var consoleTxtElement1 = document.getElementById("console-text-1");
     var consoleTxtElement2 = document.getElementById("console-text-2");
     var consoleTxtElement3 = document.getElementById("console-text-3");
+    var consoleTxtElement4 = document.getElementById("console-text-4");
     
     document.addEventListener("scroll", () => {
         if (window.scrollY > 250) {
@@ -26,6 +28,10 @@ function events() {
         if (window.scrollY > 1200) {
             consoleTxtElement3.innerHTML = CONSOLE_MSG[2] + "<span>_</span>";
             consoleTxtElement3.classList.add("--animate-typing");
+        }
+        if (window.scrollY > 1600) {
+            consoleTxtElement4.innerHTML = CONSOLE_MSG[3] + "<span>_</span>";
+            consoleTxtElement4.classList.add("--animate-typing");
         } 
     }, false);
 

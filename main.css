@@ -145,12 +145,22 @@ header {
         left: 0;
         width: 100%;
         z-index: 100;
-        background: white;
+        background: var(--white);
         height: 37px;
         display: flex;
         justify-content: center;
         align-items: center;
         border-top: 1px solid var(--smoke);
+    }
+    .header_nav ul li {
+        margin: 0 20px;
+    }
+    .header_nav ul li a {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .header_nav ul li::after {
+        left: -20px;
     }
 }
 
@@ -251,6 +261,16 @@ header {
     .home_info::after {
         opacity: 0;
     }
+    .btnContact {
+        font-size: 12px;
+        bottom: 55px;
+    }
+    .btnContact:after {
+        left: inherit;
+        right: -4px;
+        top: 50%;
+        margin-top: -5px;
+    }
 }
 
 /* SECTIONS --------------------------------------- */
@@ -282,7 +302,20 @@ section.sectionContact {
     position: relative;
     z-index: 10;
 }
-
+section.sectionShared {
+    background-color: rgb(9 158 183);
+}
+section.sectionShared h2 {
+    color: white;
+}
+section.sectionShared h2:after, section.sectionShared h2:before {
+    background-color: white;
+}
+@media (max-width: 700px) { 
+    section { 
+        padding-top: 100px; 
+    }
+}
 
 /* PORTFOLIO LIST ------------------------------- */
 .portfolio {
@@ -409,9 +442,66 @@ li.portfolio_item--active:after {
 }
 
 
-
-
-
+/* SHARED -----------------------------------------*/
+.sharedCont {
+    list-style: none;
+    position: relative;
+    padding: 0 30px;
+    text-align: center;
+}
+.sharedCont li {
+    background-color: white;
+    margin: 10px 10px;
+    border-radius: 3px;
+    position: relative;
+    width: 250px;
+    box-sizing: border-box;
+    display: inline-block;
+    min-height: 310px;
+    vertical-align: top;
+    overflow: hidden;
+    transition: scale 0.1s ease-in;
+    text-align: left;
+    outline: 1px solid white;
+}
+.sharedCont li:hover {
+    scale: 1.03;
+}
+.sharedCont li img {
+    width: 100%;
+}
+.sharedCont_body {
+    padding: 0 10px;
+    position: relative;
+}
+.sharedCont_body h3 {
+    margin: 15px 0 0 0;
+    font-size: 14px;
+}
+.sharedCont_body a {
+    font-weight: bold;
+    display: block;
+    background: var(--turquoise);
+    color: white;
+    margin: 0 auto;
+    padding: 2px 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 19px;
+}
+.sharedCont_body a:hover {
+    outline: 1px solid var(--turquoise);
+    background: transparent;
+    color: var(--turquoise);
+}
+.sharedCont_body p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+    font-size: 12px;
+}
 
 /* TEXT ------------------------------------------- */
 .text {
@@ -631,6 +721,14 @@ footer {
     left: 450px;
     border-radius: 50% ;
 }
+@media (max-width: 700px) { 
+    footer {
+        bottom: 40px;
+    }
+    .footer_bkg {
+        display: none;
+    }
+}
 
 /* SOCIAL ------------------------------------- */
 .social {
@@ -672,6 +770,11 @@ footer {
 }
 .email:hover {
     scale: 1.05;
+}
+@media (max-width: 700px) { 
+    .email, .social {
+        transform: inherit;
+    }
 }
 
 
@@ -717,6 +820,13 @@ footer {
 .--hide {
     opacity: 0!important;
 }
+@media (max-width: 700px) { 
+    .--animate-typing {
+        white-space: initial;
+        animation: none;
+    }
+}
+
 
 
 /* CONSOLE ----------------------- */
@@ -757,4 +867,8 @@ footer {
     position: relative;
     animation: blinker 1s step-end infinite;
 }
-
+@media (max-width: 700px) { 
+    .console { 
+        width: 90%;
+    }
+}
