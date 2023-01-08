@@ -1,7 +1,6 @@
 /* VARIABLES ------------------------------ */
 :root {
     --onyx: rgb(51, 51, 51);
-    --onyx-a0: rgba(51, 51, 51, 0);
     --carbon: rgb(36, 36, 36);
     --white: rgb(255, 255, 255);
     --turquoise: rgb(5, 136, 158);
@@ -13,7 +12,6 @@
 }
 .--dark-mode {
     --onyx: rgb(255, 255, 255);
-    --onyx-a0: rgba(255, 255, 255, 0);
     --white: rgb(32 32 32);
     --smoke: rgb(50 53 54);
     --carbon: rgb(235, 235, 235);
@@ -348,17 +346,21 @@ section.sectionShared h2:after, section.sectionShared h2:before {
     transform: rotate(-45deg);
     margin-bottom: -5px;
 }
+.portfolio li:hover:after {
+    cursor: pointer;
+}
 .portfolio li:hover {
     opacity: 1;
     border: 1px solid var(--onyx);
+    cursor: initial;
     /* box-shadow: 0px 0px 2px var(--gray); */
 }
 .portfolio li span {
     background-color: var(--onyx);
     color: var(--white);
-    font-size: 11px;
+    font-size: 10px;
     box-sizing: border-box;
-    padding: 3px 10px;
+    padding: 2px 8px;
     border-radius: 3px;
     margin: 0 7px;
     font-weight: bold;
@@ -414,13 +416,6 @@ section.sectionShared h2:after, section.sectionShared h2:before {
 .portfolio_imagecont div img {
     width: 100%;
 }
-.portfolio_imagecont div::after {
-    content: attr(name);
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    color:red;
-}
 li.portfolio_item--active {
     opacity: 1;
 }
@@ -451,7 +446,7 @@ li.portfolio_item--active:after {
 }
 .sharedCont li {
     background-color: white;
-    margin: 10px 10px;
+    margin: 20px 10px;
     border-radius: 3px;
     position: relative;
     width: 250px;
@@ -462,10 +457,10 @@ li.portfolio_item--active:after {
     overflow: hidden;
     transition: scale 0.1s ease-in;
     text-align: left;
-    outline: 1px solid white;
 }
 .sharedCont li:hover {
     scale: 1.03;
+    outline: 1px solid white;
 }
 .sharedCont li img {
     width: 100%;
@@ -501,7 +496,25 @@ li.portfolio_item--active:after {
     -webkit-box-orient: vertical;  
     overflow: hidden;
     font-size: 12px;
+    color: rgb(51, 51, 51);
 }
+span.sharedCont_tag {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    font-size: 10px;
+    box-sizing: border-box;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin: 0 7px;
+    font-weight: bold;
+    margin: 0 0px 0 9px;
+}
+span.sharedCont_date {
+    color: gray;
+} 
 
 /* TEXT ------------------------------------------- */
 .text {
