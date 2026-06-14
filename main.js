@@ -1,6 +1,7 @@
 const CONSOLE_MESSAGES = {
     development: "Games, pixels and broken toys — that's how the frontend journey started.",
     illustration: "Drawing pixels, characters, and worlds — a creative side that runs parallel to the code.",
+    music: "Sound is just another dimension of creativity — here's something I made.",
     shared: "I share to learn and then I learn to keep sharing. *The content here is in pure honest Spanish :)",
 };
 
@@ -36,7 +37,7 @@ function events() {
         });
     }, { rootMargin: "-30% 0px -30% 0px", threshold: 0 });
 
-    ["about", "development", "illustration", "shared", "contact"].forEach(function(id) {
+    ["about", "development", "illustration", "music", "shared", "contact"].forEach(function(id) {
         var el = document.getElementById(id);
         if (el) observer.observe(el);
     });
