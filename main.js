@@ -1,34 +1,99 @@
-const CONSOLE_MESSAGES = {
-    development: "Games, pixels and broken toys — that's how the frontend journey started.",
-    illustration: "Drawing pixels, characters, and worlds — a creative side that runs parallel to the code.",
-    music: "Sound is just another dimension of creativity — here's something I made.",
-    shared: "I share to learn and then I learn to keep sharing. *The content here is in pure honest Spanish :)",
-};
+const CONSOLE_MESSAGES = [
+    "Qué más pues. I'm from Medellín, Colombia",
+    // "It's a pleasure to have you here",
+    // "Welcome to my stuff",
+    // '"There is art to science, and a science in art"',
+    "I learn to share, and share to learn... (bis)",
+    "I've met amazing humans from all over the world'",
+];
+
+var messageQueue = [];
+var firstMessageShown = false;
+
+function getNextMessage() {
+    if (!firstMessageShown) {
+        firstMessageShown = true;
+        return CONSOLE_MESSAGES[0];
+    }
+    if (messageQueue.length === 0) {
+        messageQueue = CONSOLE_MESSAGES.slice().sort(function() { return Math.random() - 0.5; });
+    }
+    return messageQueue.pop();
+}
 
 function init() {
     events();
 }
 
 function events() {
-    var btnChangeMode = document.getElementById("btn-change-mode");
-    var consoleEl     = document.getElementById("console-float");
-    var consoleTxt    = document.getElementById("console-float-text");
-    var activeSection = null;
+    var btnChangeMode         = document.getElementById("btn-change-mode");
+    var consoleEl             = document.getElementById("console-float");
+    var consoleTxt            = document.getElementById("console-float-text");
+    var activeSection         = null;
+    var currentTypingInterval = null;
+    var showTimeout           = null;
+    var hideTimeout           = null;
+
+    function clearAllTimers() {
+        if (showTimeout)           { clearTimeout(showTimeout);            showTimeout = null; }
+        if (hideTimeout)           { clearTimeout(hideTimeout);            hideTimeout = null; }
+        if (currentTypingInterval) { clearInterval(currentTypingInterval); currentTypingInterval = null; }
+    }
+
+    function hideConsole() {
+        if (currentTypingInterval) { clearInterval(currentTypingInterval); currentTypingInterval = null; }
+        consoleEl.classList.add("console--hiding");
+        setTimeout(function() {
+            consoleEl.classList.remove("console--visible");
+            consoleEl.classList.remove("console--hiding");
+        }, 420);
+    }
+
+    function startTyping(text) {
+        consoleTxt.innerHTML = '<span>_</span>';
+        var i = 0;
+        currentTypingInterval = setInterval(function() {
+            if (i < text.length) {
+                consoleTxt.innerHTML = text.substring(0, i + 1) + '<span>_</span>';
+                i++;
+            } else {
+                clearInterval(currentTypingInterval);
+                currentTypingInterval = null;
+            }
+        }, 40);
+    }
+
+    var consoleSections = ["development", "illustration", "music", "shared"];
 
     function setSection(id) {
         if (id === activeSection) return;
         activeSection = id;
 
-        if (!CONSOLE_MESSAGES[id]) {
-            consoleEl.classList.remove("console--visible");
+        var isConsoleSec = consoleSections.indexOf(id) !== -1;
+        var isVisible    = consoleEl.classList.contains("console--visible");
+        var isPending    = showTimeout !== null;
+
+        if (!isConsoleSec) {
+            if (isPending)  { clearAllTimers(); }
+            if (isVisible)  { clearAllTimers(); hideTimeout = setTimeout(hideConsole, 1000); }
             return;
         }
 
-        consoleTxt.classList.remove("--animate-typing");
-        void consoleTxt.offsetWidth; // force reflow to restart animation
-        consoleTxt.innerHTML = CONSOLE_MESSAGES[id] + "<span>_</span>";
-        consoleTxt.classList.add("--animate-typing");
-        consoleEl.classList.add("console--visible");
+        // console section: don't interrupt a cycle already running
+        if (isVisible || isPending) return;
+
+        showTimeout = setTimeout(function() {
+            showTimeout = null;
+            consoleEl.classList.remove("console--hiding", "console--visible");
+            consoleEl.classList.add("console--visible");
+            startTyping(getNextMessage());
+
+            hideTimeout = setTimeout(function() {
+                hideTimeout = null;
+                hideConsole();
+                activeSection = null;
+            }, 7000);
+        }, 2000);
     }
 
     var observer = new IntersectionObserver(function(entries) {

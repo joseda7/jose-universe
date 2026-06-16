@@ -6,9 +6,12 @@
     --turquoise: rgb(5, 136, 158);
     --aquamarine: rgb(27, 226, 202);
     --smoke: rgb(235, 235, 235);
+    --darkgray: rgb(70, 70, 70);
     --gray: rgb(128, 128, 128);
+    --gray-opacity: rgba(128, 128, 128, 0.1);
     --salmon: rgb(250, 119, 97);
     --mustard: rgb(247, 209, 116);
+    --radius: 5px;
 }
 .--dark-mode {
     --onyx: rgb(255, 255, 255);
@@ -181,7 +184,7 @@ header {
     position: relative;
     background-color: var(--onyx);
     padding: 10px 20px;
-    border-radius: 3px;
+    border-radius: var(--radius);
     width: 50%;
     box-sizing: border-box;
     display: flex;
@@ -197,7 +200,7 @@ header {
     background-color: var(--onyx);
     width: 15px;
     height: 15px;
-    border-radius: 3px;
+    border-radius: var(--radius);
     transform: rotate(45deg);
     left: -5px;
     top: 50%;
@@ -221,7 +224,7 @@ header {
     background: var(--turquoise);
     border: 2px solid var(--aquamarine);
     color: white;
-    border-radius: 3px;
+    border-radius: var(--radius);
     padding: 7px 13px;
     border: none;
     font-weight: bold;
@@ -239,7 +242,7 @@ header {
     background-color: var(--turquoise);
     width: 10px;
     height: 10px;
-    border-radius: 3px;
+    border-radius: var(--radius);
     transform: rotate(45deg);
     left: 50%;
     top: 24px;
@@ -302,6 +305,10 @@ section.sectionContact {
     position: relative;
     z-index: 10;
 }
+.contact__intro.text {
+    color: white;
+    margin: 0 0 12px;
+}
 section.sectionShared {
     background-color: rgb(9 158 183);
 }
@@ -341,11 +348,11 @@ section.sectionShared .separator--turquoise::after {
 }
 #music .sectionDev__title,
 #music .sectionDev__desc,
-#music .sectionDev__tools,
+#music .sectionDev__skills,
 #music .text {
     color: white;
 }
-#music .sectionDev__tools {
+#music .sectionDev__skills {
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -384,11 +391,28 @@ section.sectionShared .separator--turquoise::after {
 .sectionDev__desc {
     margin: 0 0 16px;
 }
-.sectionDev__tools {
-    color: var(--gray);
-    font-size: 13px;
-    line-height: 1.7;
-    margin: 0;
+.sectionDev__skills {
+    font-size: 12px!important;
+    line-height: 1.5;
+    margin: 15px 0 0 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--gray-opacity);
+    background-color: var(--gray-opacity);
+    border-radius: var(--radius);
+    padding: 3px;
+}
+.sectionDev__skills-label {
+    background-color: var(--turquoise);
+    color: white;
+    font-size: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 5px 4px;
+    border-radius: var(--radius);
+    flex-shrink: 0;
 }
 .sectionDev__cta {
     display: inline-flex;
@@ -424,30 +448,38 @@ section.sectionShared .separator--turquoise::after {
     display: flex;
     margin-left: auto;
 }
+.home_info .sectionDev__cta:hover {
+    color: var(--aquamarine);
+}
+.home_info .sectionDev__cta:hover::before {
+    border-color: var(--aquamarine);
+}
 .sectionDev__gallery {
     flex-shrink: 0;
     background-color: var(--white);
-    border-radius: 10px;
+    border-radius: var(--radius);
     padding: 20px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    border: 1px solid var(--smoke);
 }
 .sectionDev__gallery--spotify {
     background: none;
     padding: 0;
     box-shadow: none;
     border-radius: 0;
+    border: none;
 }
 .sectionDev__gallery--spotify iframe {
-    border-radius: 12px;
+    border-radius: var(--radius);
     display: block;
 }
 .music__video {
     position: relative;
     width: 100%;
     max-width: 670px;
-    margin: 40px auto 0;
+    margin: 70px auto 50px;
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
+    border-radius: var(--radius);
     overflow: hidden;
 }
 .music__video iframe {
@@ -495,7 +527,7 @@ section.sectionShared .separator--turquoise::after {
     height: 420px;
     flex-shrink: 0;
     position: relative;
-    border-radius: 6px;
+    border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--smoke);
     box-sizing: border-box;
@@ -599,7 +631,7 @@ section.sectionShared .separator--turquoise::after {
 .sharedCont li {
     background-color: white;
     margin: 20px 10px;
-    border-radius: 3px;
+    border-radius: var(--radius);
     position: relative;
     width: 250px;
     box-sizing: border-box;
@@ -632,7 +664,7 @@ section.sectionShared .separator--turquoise::after {
     color: white;
     margin: 0 auto;
     padding: 2px 10px;
-    border-radius: 3px;
+    border-radius: var(--radius);
     box-sizing: border-box;
     width: 100%;
     margin-top: 19px;
@@ -659,7 +691,7 @@ span.sharedCont_tag {
     font-size: 10px;
     box-sizing: border-box;
     padding: 2px 8px;
-    border-radius: 3px;
+    border-radius: var(--radius);
     margin: 0 7px;
     font-weight: bold;
     margin: 0 0px 0 9px;
@@ -908,9 +940,8 @@ footer {
 .social {
     display: flex;
     padding: 0;
-    list-style: none;    
+    list-style: none;
     align-items: center;
-    transform: translateX(40px);
 }
 .social li {
     margin: 0 20px 0 0;
@@ -918,7 +949,7 @@ footer {
     width: 40px;
     height: 40px;
     transition: scale 0.15s ease-in;
-    border-radius: 3px;
+    border-radius: var(--radius);
     padding: 5px;
     box-sizing: border-box;
 }
@@ -934,21 +965,15 @@ footer {
 .email {
     margin: 20px 0;
     display: block;
-    transform: translateX(40px);
     color: var(--carbon);
     padding: 4px 15px;
     background: var(--white);
-    border-radius: 3px;
+    border-radius: var(--radius);
     transition: scale 0.15s ease-in;
     font-weight: bold;
 }
 .email:hover {
     scale: 1.05;
-}
-@media (max-width: 700px) { 
-    .email, .social {
-        transform: inherit;
-    }
 }
 
 
@@ -1009,16 +1034,19 @@ footer {
     bottom: 45px;
     left: 20px;
     width: 90vw;
-    max-width: 400px;
+    max-width: 310px;
     background-color: var(--onyx);
     box-sizing: border-box;
-    border-radius: 3px;
-    padding: 20px 50px 20px 90px;
-    min-height: 25px;
+    border-radius: var(--radius);
+    padding: 15px 25px 15px 100px;
+    height: 60px;
     z-index: 50;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.15s ease;
+    border: 1px solid var(--turquoise);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
 }
 .console--visible {
     opacity: 1;
@@ -1029,6 +1057,17 @@ footer {
     55%  { opacity: 1; transform: translateY(-8px) scaleY(1.03); }
     75%  { transform: translateY(4px) scaleY(0.98); }
     100% { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+.console.console--hiding {
+    pointer-events: none;
+    transition: none;
+    animation: consoleExit 0.4s cubic-bezier(0.64, 0, 0.78, 0) forwards;
+}
+@keyframes consoleExit {
+    0%   { opacity: 1; transform: translateY(0) scaleY(1); }
+    25%  { transform: translateY(4px) scaleY(0.98); }
+    45%  { opacity: 1; transform: translateY(-8px) scaleY(1.03); }
+    100% { opacity: 0; transform: translateY(40px) scaleY(0.8); }
 }
 .console__avatar {
     position: absolute;
@@ -1043,7 +1082,8 @@ footer {
     color: var(--white);
     margin: 0;
     font-size: 13px;
-    position: relative;
+    white-space: normal;
+    word-break: break-word;
 }
 .console p span {
     font-family: 'Inconsolata';
